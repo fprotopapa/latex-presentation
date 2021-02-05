@@ -1,0 +1,77 @@
+\documentclass[11pt]{beamer}
+%\usetheme{Darmstadt}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{multicol}
+\usepackage{pgfpages}
+\usepackage{bibentry}
+\usepackage{graphbox}
+%
+%% Set notes (comment if no notes needed)
+\setbeameroption{show notes on second screen=right}  
+\setbeamertemplate{note page}[plain]
+%
+%% Define colors
+\definecolor{cyan_mod}{RGB}{0,157,224}
+%
+%%% Beamer templates
+%% Sections
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+%% Frametitle
+\setbeamertemplate{frametitle}[default][center]
+%% Foot
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{footline}{%
+    \textcolor{cyan_mod}{\rule[1mm]{\paperwidth}{1pt}}
+    \includegraphics[align=c, trim=-0.2cm -0.2cm 0 0, height=.8cm]{pictures/logo.png}
+    \hfill%
+}
+%
+%%% Itemize
+\setbeamertemplate{itemize items}[circle]                    
+\setbeamercovered{transparent}
+%
+%%% Set colors
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{subsection in toc}{fg=black}
+\setbeamercolor{frametitle}{fg=cyan_mod}
+\setbeamercolor{title}{fg=cyan_mod}
+\setbeamercolor{itemize item}{fg=cyan_mod}%
+%
+%%% Set fontstyle
+\setbeamerfont{institute}{size=\small}
+\setbeamerfont{date}{size=\small}
+% 
+%%% Navigation on slides
+\beamertemplatenavigationsymbolsempty
+%
+%%% Define titlepage
+\title{Some meaningful title!}
+\institute{Institute}
+\author{Author}
+\date[]{\today}
+%
+%%% Content
+%
+\begin{document}
+%
+\input{content/organisation.tex}
+%% Change template style
+\setbeamertemplate{footline}{%
+    \textcolor{cyan_mod}{\rule[1mm]{\paperwidth}{1pt}}
+    \includegraphics[align=c, trim=-0.2cm -0.2cm 0 0, height=0.8cm]{pictures/logo.png}
+    \hfill%
+    \usebeamerfont{page number in head/foot}%
+    Slide \insertframenumber\kern1em 
+}
+%
+\input{content/introduction.tex}
+\input{content/methods.tex}
+\input{content/results.tex}
+\input{content/discussion.tex}
+\input{content/end.tex}
+%
+\end{document}
